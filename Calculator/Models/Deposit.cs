@@ -1,24 +1,21 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Calculator.Models
 {
-    public class Deposit
+    public class Deposit : Account
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
-        public int AccountNumber { get; set; }
-        public string Type { get; set; }
-
+        [Required]
         [Column(TypeName = "decimal(18,4)")]
         public decimal AverageBalance { get; set; }
-
+        [Required]
+        [Range(0, 10000)]
         [Column(TypeName = "decimal(18,4)")]
         public decimal InterestRate { get; set; }
-
+        [Required]
+        [Range(0, 100000000)]
         [Column(TypeName = "decimal(18,4)")]
         public decimal Cost { get; set; }
-
-        public DateTime DateCreated { get; set; } = DateTime.Now;
-        public string PortfolioId { get; set; }
     }
 }
