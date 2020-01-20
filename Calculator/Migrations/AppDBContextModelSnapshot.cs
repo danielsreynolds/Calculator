@@ -34,13 +34,16 @@ namespace Calculator.Migrations
                         .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("PortfolioId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Term")
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -51,9 +54,9 @@ namespace Calculator.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "256b6fe3-917b-477d-bd4f-7b28a6f89fa2",
+                            Id = "1a1cd8bc-7722-4800-adb9-8f44cba15e61",
                             AccountNumber = 123456789,
-                            DateCreated = new DateTime(2020, 1, 16, 12, 11, 18, 214, DateTimeKind.Local).AddTicks(231),
+                            DateCreated = new DateTime(2020, 1, 20, 12, 22, 0, 52, DateTimeKind.Local).AddTicks(4357),
                             InterestRate = 5m,
                             PortfolioId = "62a8842a-2feb-4330-8860-d1d0b28bcc5b",
                             Term = 12,
@@ -82,10 +85,13 @@ namespace Calculator.Migrations
                         .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("PortfolioId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<decimal>("UsageByPercentage")
                         .HasColumnType("decimal(18,4)");
@@ -99,10 +105,10 @@ namespace Calculator.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3d09e3ac-6cb7-4079-9b31-d9f4ad1786f6",
+                            Id = "e87f3a08-d430-49ab-97d1-75eb2b5f2c88",
                             AccountNumber = 123321123,
                             Balance = 500m,
-                            DateCreated = new DateTime(2020, 1, 16, 12, 11, 18, 214, DateTimeKind.Local).AddTicks(3516),
+                            DateCreated = new DateTime(2020, 1, 20, 12, 22, 0, 52, DateTimeKind.Local).AddTicks(7041),
                             Income = 1123m,
                             InterestRate = 17m,
                             PortfolioId = "62a8842a-2feb-4330-8860-d1d0b28bcc5b",
@@ -132,10 +138,13 @@ namespace Calculator.Migrations
                         .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("PortfolioId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -146,11 +155,11 @@ namespace Calculator.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "74769c9e-0f23-4ee7-a542-a191081d4eea",
+                            Id = "fd665f7d-ac47-469e-9ec0-b37cc6b0602a",
                             AccountNumber = 321321321,
                             AverageBalance = 5432m,
                             Cost = 500m,
-                            DateCreated = new DateTime(2020, 1, 16, 12, 11, 18, 214, DateTimeKind.Local).AddTicks(7272),
+                            DateCreated = new DateTime(2020, 1, 20, 12, 22, 0, 52, DateTimeKind.Local).AddTicks(9298),
                             InterestRate = 0.32m,
                             PortfolioId = "62a8842a-2feb-4330-8860-d1d0b28bcc5b",
                             Type = "Normal"
@@ -178,13 +187,16 @@ namespace Calculator.Migrations
                         .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("PortfolioId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Term")
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -195,10 +207,10 @@ namespace Calculator.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "02b856f9-06bd-4d00-b7ec-2e88d3a7f730",
+                            Id = "7b88a90e-e340-4f18-8121-92e4f1d8a294",
                             AccountNumber = 54323453,
                             Balance = 9080m,
-                            DateCreated = new DateTime(2020, 1, 16, 12, 11, 18, 215, DateTimeKind.Local).AddTicks(620),
+                            DateCreated = new DateTime(2020, 1, 20, 12, 22, 0, 53, DateTimeKind.Local).AddTicks(1155),
                             Income = 500m,
                             InterestRate = 3.32m,
                             PortfolioId = "62a8842a-2feb-4330-8860-d1d0b28bcc5b",
@@ -216,10 +228,18 @@ namespace Calculator.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(70)")
+                        .HasMaxLength(70);
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(280)")
+                        .HasMaxLength(280);
 
                     b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -229,7 +249,7 @@ namespace Calculator.Migrations
                         new
                         {
                             Id = "62a8842a-2feb-4330-8860-d1d0b28bcc5b",
-                            DateCreated = new DateTime(2020, 1, 16, 12, 11, 18, 210, DateTimeKind.Local).AddTicks(8425),
+                            DateCreated = new DateTime(2020, 1, 20, 12, 22, 0, 49, DateTimeKind.Local).AddTicks(1917),
                             Name = "Nim Sum",
                             Type = "Normal"
                         });
@@ -239,28 +259,36 @@ namespace Calculator.Migrations
                 {
                     b.HasOne("Calculator.Models.Portfolio", null)
                         .WithMany("CertificateOfDeposits")
-                        .HasForeignKey("PortfolioId");
+                        .HasForeignKey("PortfolioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Calculator.Models.CreditCard", b =>
                 {
                     b.HasOne("Calculator.Models.Portfolio", null)
                         .WithMany("CreditCards")
-                        .HasForeignKey("PortfolioId");
+                        .HasForeignKey("PortfolioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Calculator.Models.Deposit", b =>
                 {
                     b.HasOne("Calculator.Models.Portfolio", null)
                         .WithMany("Deposits")
-                        .HasForeignKey("PortfolioId");
+                        .HasForeignKey("PortfolioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Calculator.Models.Loan", b =>
                 {
                     b.HasOne("Calculator.Models.Portfolio", null)
                         .WithMany("Loans")
-                        .HasForeignKey("PortfolioId");
+                        .HasForeignKey("PortfolioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
