@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Calculator.Models
 {
@@ -10,7 +7,7 @@ namespace Calculator.Models
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
-            string portfolioId = Guid.NewGuid().ToString();
+            string portfolioId = "62a8842a-2feb-4330-8860-d1d0b28bcc5b";
 
             modelBuilder.Entity<Portfolio>().HasData(
                 new Portfolio
